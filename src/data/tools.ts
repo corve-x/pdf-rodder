@@ -22,3 +22,7 @@ export const tools: ToolDefinition[] = [
     accept: MERGE_FORMATS,
   },
 ];
+
+export function getTool(slug: string | undefined): ToolDefinition | undefined {
+  return tools.find((tool) => tool.slug === slug);
+}
