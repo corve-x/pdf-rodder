@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import type { DragEvent } from "react";
 import { Upload } from "lucide-react";
+
 import { Alert } from "@/components/ui/Alert";
 import { Button } from "@/components/ui/Button";
 import { formatAccepted, validateFile } from "@/utils/file";
@@ -9,6 +10,7 @@ import { cn } from "@/utils/cn";
 interface UploadBoxProps {
   /** Accepted extensions, lowercase, without the dot. */
   accept: string[];
+
   /** Called with a file that passed validation. */
   onFile: (file: File) => void;
 }
@@ -21,15 +23,19 @@ export function UploadBox({ accept, onFile }: UploadBoxProps) {
 
   function handleFiles(files: FileList | null) {
     if (!files || files.length === 0) return;
+
     if (files.length > 1) {
       setError("Please add one file at a time.");
       return;
     }
+
     const problem = validateFile(files[0], accept);
+
     if (problem) {
-      setError(problem);
+      setError(problem.message);
       return;
     }
+
     setError(null);
     onFile(files[0]);
   }
@@ -49,8 +55,9 @@ export function UploadBox({ accept, onFile }: UploadBoxProps) {
           setDragging(true);
         }}
         onDragLeave={(e) => {
-          if (!e.currentTarget.contains(e.relatedTarget as Node | null))
+          if (!e.currentTarget.contains(e.relatedTarget as Node | null)) {
             setDragging(false);
+          }
         }}
         onDrop={handleDrop}
         className={cn(
@@ -61,11 +68,15 @@ export function UploadBox({ accept, onFile }: UploadBoxProps) {
         )}
       >
         <Upload className="h-8 w-8 text-text-muted" aria-hidden="true" />
+
         <p className="mt-4 text-lg font-medium text-text">
           <span className="hidden sm:inline">Drop your file here</span>
+
           <span className="sm:hidden">Select a file to convert</span>
         </p>
+
         <p className="mt-1 hidden text-sm text-text-muted sm:block">or</p>
+
         <Button
           size="lg"
           className="mt-4 sm:mt-3"
@@ -73,9 +84,11 @@ export function UploadBox({ accept, onFile }: UploadBoxProps) {
         >
           Choose file
         </Button>
+
         <p className="mt-5 text-sm text-text-muted">
           Supported formats: {formatAccepted(accept)}
         </p>
+
         <input
           ref={inputRef}
           type="file"
@@ -85,10 +98,13 @@ export function UploadBox({ accept, onFile }: UploadBoxProps) {
           aria-label="Choose a file"
           onChange={(e) => {
             handleFiles(e.target.files);
-            e.target.value = ""; // lets the same file be picked again
+
+            // Lets the same file be picked again.
+            e.target.value = "";
           }}
         />
       </div>
+
       {error && (
         <div className="mt-3">
           <Alert>{error}</Alert>

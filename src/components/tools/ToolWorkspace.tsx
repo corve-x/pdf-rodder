@@ -21,7 +21,8 @@ export function ToolWorkspace({ tool }: { tool: ToolDefinition }) {
 
   const statusMessage = announcements[status] ?? "";
 
-  // The empty state is the dashed upload area on its own; later states sit in a card.
+  // The empty state is the dashed upload area on its own;
+  // later states sit in a card.
   if (status === "idle") {
     return <UploadBox accept={tool.accept} onFile={selectFile} />;
   }
@@ -35,6 +36,7 @@ export function ToolWorkspace({ tool }: { tool: ToolDefinition }) {
       {status === "ready" && file && (
         <div className="space-y-5">
           <FilePreview file={file} onRemove={reset} />
+
           <Button size="lg" fullWidth onClick={convert}>
             Convert to PDF
           </Button>
@@ -44,14 +46,21 @@ export function ToolWorkspace({ tool }: { tool: ToolDefinition }) {
       {status === "converting" && file && (
         <div className="space-y-5">
           <FilePreview file={file} />
-          <ConversionProgress progress={progress} />
+
+          <ConversionProgress
+            progress={progress}
+            stage="processing"
+            processingLabel="Processing your file..."
+          />
         </div>
       )}
 
       {status === "error" && file && (
         <div className="space-y-5">
           <Alert>{error}</Alert>
+
           <FilePreview file={file} onRemove={reset} />
+
           <Button size="lg" fullWidth onClick={convert}>
             Try again
           </Button>
@@ -59,7 +68,11 @@ export function ToolWorkspace({ tool }: { tool: ToolDefinition }) {
       )}
 
       {status === "done" && result && (
-        <DownloadResult result={result} onReset={reset} />
+        <DownloadResult
+          result={result}
+          onReset={reset}
+          heading="Your PDF is ready"
+        />
       )}
     </Card>
   );
