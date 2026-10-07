@@ -192,7 +192,7 @@ export default function About() {
           Wanna see how it is BUILT?
         </h2>
         <p className={cn(bodyText, "mt-2")}>
-          Check out the project and follow the development on GitHub.
+          Check out the project and get the source code on GitHub.
         </p>
         <div className="mt-6 flex justify-center">
           <ButtonAnchor href={GITHUB_PROJECT_URL} size="lg">
