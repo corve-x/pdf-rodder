@@ -24,7 +24,7 @@ function Section({ title, children }: { title: string; children: ReactNode }) {
 const bodyText = "leading-relaxed text-text-secondary";
 
 export default function About() {
-  usePageTitle("Built by Satya");
+  usePageTitle("Built by VoidEZ");
 
   return (
     <PageContainer size="narrow" className="space-y-12 sm:space-y-14">
@@ -33,7 +33,7 @@ export default function About() {
           Build by Satya
         </h1>
         <p className={cn(bodyText, "mx-auto mt-3 max-w-md")}>
-          PDF Rodder is built and maintained by {DEVELOPER_NAME} aka Corve-X.
+          PDF Rodder is built and maintained by {DEVELOPER_NAME}.
         </p>
         <div className="mt-6 flex justify-center">
           <ButtonAnchor
