@@ -1,6 +1,5 @@
 import { ArrowDown } from "lucide-react";
 
-/** Shown under the empty Merge upload area: merging is not limited to PDFs. */
 export function MergeExplainer() {
   return (
     <section

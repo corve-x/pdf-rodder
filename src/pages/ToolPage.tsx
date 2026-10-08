@@ -1,7 +1,6 @@
 import { ArrowLeft } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import { PageContainer } from "@/components/layout/PageContainer";
-import { ToolWorkspace } from "@/components/tools/ToolWorkspace";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { getTool } from "@/data/tools";
 import { usePageTitle } from "@/hooks/usePageTitle";
@@ -25,7 +24,6 @@ export default function ToolPage() {
       </Link>
       <PageHeader title={tool.title} description={tool.description} />
       {/* key resets the upload state when switching between tools */}
-      <ToolWorkspace key={tool.slug} tool={tool} />
     </PageContainer>
   );
 }

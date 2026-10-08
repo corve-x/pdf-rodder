@@ -1,17 +1,20 @@
-import { cn } from '@/utils/cn'
+import { cn } from "@/utils/cn";
 
 interface ProgressBarProps {
-  /** 0–100 */
-  value: number
-  label?: string
-  className?: string
+  value: number;
+  label?: string;
+  className?: string;
 }
 
-export function ProgressBar({ value, label = 'Progress', className }: ProgressBarProps) {
-  const percent = Math.min(100, Math.max(0, Math.round(value)))
+export function ProgressBar({
+  value,
+  label = "Progress",
+  className,
+}: ProgressBarProps) {
+  const percent = Math.min(100, Math.max(0, Math.round(value)));
 
   return (
-    <div className={cn('flex items-center gap-3', className)}>
+    <div className={cn("flex items-center gap-3", className)}>
       <div
         role="progressbar"
         aria-label={label}
@@ -25,7 +28,9 @@ export function ProgressBar({ value, label = 'Progress', className }: ProgressBa
           style={{ width: `${percent}%` }}
         />
       </div>
-      <span className="w-10 text-right text-sm tabular-nums text-text-secondary">{percent}%</span>
+      <span className="w-10 text-right text-sm tabular-nums text-text-secondary">
+        {percent}%
+      </span>
     </div>
-  )
+  );
 }

@@ -1,3 +1,4 @@
+//just my data
 export const GITHUB_URL = "https://github.com/corve-x";
 export const GITHUB_HANDLE = "@corve-x";
 export const DEVELOPER_NAME = "VoidEZ";

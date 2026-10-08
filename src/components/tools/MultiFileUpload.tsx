@@ -7,11 +7,8 @@ import type { FileProblem } from "@/utils/file";
 
 interface MultiFileUploadProps {
   accept: string[];
-  /** How many files are already in the list (for the file-count limit). */
   currentCount: number;
-  /** Called with the files that passed validation. */
   onFiles: (files: File[]) => void;
-  /** Renders just an "Add More Files" button instead of the full drop area. */
   compact?: boolean;
 }
 

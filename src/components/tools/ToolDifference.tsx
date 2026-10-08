@@ -1,6 +1,5 @@
 import { FlowExample } from "@/components/tools/FlowExample";
 
-/** Home page: which tool do I need? */
 export function ToolDifference() {
   return (
     <section

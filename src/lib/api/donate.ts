@@ -10,9 +10,7 @@ export const MAX_DONATION = 100_000;
 export interface DonationQr {
   amount: number;
   upiId: string;
-  /** upi://pay?... link. Opens the user's UPI app when tapped on a phone. */
   upiUrl: string;
-  /** Ready to use as an <img src>. */
   qrImage: string;
 }
 

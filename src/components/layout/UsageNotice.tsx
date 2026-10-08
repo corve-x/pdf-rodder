@@ -4,9 +4,6 @@ import { useEffect, useRef } from "react";
 import { HeartHandshake } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
-// sessionStorage = the notice shows once per visit (it returns when the tab is
-// closed and the site is opened again). Change both uses below to
-// `localStorage` if you want it to show only once per browser, ever.
 const STORAGE_KEY = "pdf-rodder-usage-notice-ack";
 
 function wasAcknowledged() {

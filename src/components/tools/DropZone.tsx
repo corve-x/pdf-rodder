@@ -10,16 +10,13 @@ import type { FileProblem } from "@/utils/file";
 interface DropZoneProps {
   accept: string[];
   multiple?: boolean;
-  // Receives whatever the user dropped or picked; validation is the caller's job.
   onFiles: (files: File[]) => void;
   heading: string;
-  // to show instead of `heading` on small screens, where drag and drop isn't a thing.
   mobileHeading: string;
   buttonLabel: string;
   problems?: FileProblem[];
 }
 
-// Drag-and-drop area + file picker, shared by the single and multi-file uploads.
 export function DropZone({
   accept,
   multiple,
@@ -95,7 +92,6 @@ export function DropZone({
   );
 }
 
-/** Shows up to three problems, then a count of the rest. */
 export function ProblemList({ problems }: { problems: FileProblem[] }) {
   if (problems.length === 0) return null;
   const shown = problems.slice(0, 3);

@@ -4,9 +4,7 @@ import type { JobStage } from "@/hooks/usePdfJob";
 
 interface ConversionProgressProps {
   stage: JobStage;
-  // Upload progress, 0–100.
   progress: number;
-  // What the server is doing once the upload finishes.
   processingLabel: string;
 }
 

@@ -1,9 +1,12 @@
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
-/** Flat red document mark + wordmark. */
 export function Logo() {
   return (
-    <Link to="/" className="inline-flex items-center gap-2.5 rounded-control" aria-label="PDF Rodder home">
+    <Link
+      to="/"
+      className="inline-flex items-center gap-2.5 rounded-control"
+      aria-label="PDF Rodder home"
+    >
       <svg viewBox="0 0 32 32" className="h-7 w-7" aria-hidden="true">
         <rect width="32" height="32" rx="6" fill="#C0392B" />
         <path
@@ -14,7 +17,9 @@ export function Logo() {
           strokeLinejoin="round"
         />
       </svg>
-      <span className="text-base font-bold tracking-wide text-text">PDF RODDER</span>
+      <span className="text-base font-bold tracking-wide text-text">
+        PDF RODDER
+      </span>
     </Link>
-  )
+  );
 }

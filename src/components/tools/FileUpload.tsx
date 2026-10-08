@@ -5,7 +5,6 @@ import type { FileProblem } from "@/utils/file";
 
 interface FileUploadProps {
   accept: string[];
-  /** Called with a file that passed validation. */
   onFile: (file: File) => void;
 }
 

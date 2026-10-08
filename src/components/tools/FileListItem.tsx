@@ -8,9 +8,7 @@ interface FileListItemProps {
   file: File;
   index: number;
   total: number;
-  /** Highlights the row when the backend reported this file as unprocessable. */
   hasError?: boolean;
-  /** Hides all controls (while merging). */
   readOnly?: boolean;
   dragging?: boolean;
   dropTarget?: boolean;

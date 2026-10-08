@@ -4,7 +4,6 @@ import type { FileEntry } from "@/types/conversion";
 
 interface FileListProps {
   entries: FileEntry[];
-  // File name the backend failed on (if any)
   failedFileName?: string;
   readOnly?: boolean;
   onRemove: (id: number) => void;

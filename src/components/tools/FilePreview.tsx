@@ -5,7 +5,6 @@ import { formatFileSize } from "@/utils/file";
 
 interface FilePreviewProps {
   file: File;
-  /** Omit to hide the remove button (while converting). */
   onRemove?: () => void;
 }
 

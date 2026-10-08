@@ -5,7 +5,6 @@ interface FlowExampleProps {
   output: string;
 }
 
-/** Small "these files → this PDF" illustration. */
 export function FlowExample({ inputs, output }: FlowExampleProps) {
   return (
     <div className="space-y-2 font-mono text-sm">
