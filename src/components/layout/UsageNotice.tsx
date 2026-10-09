@@ -20,22 +20,19 @@ export function UsageNotice() {
   useEffect(() => {
     const dialog = dialogRef.current;
     if (!dialog || dialog.open || wasAcknowledged()) return;
-    dialog.showModal(); // native modal: focus trap + dimmed backdrop for free
+    dialog.showModal();
   }, []);
 
   function handleAccept() {
     try {
       sessionStorage.setItem(STORAGE_KEY, "1");
-    } catch {
-      /* ignore: the notice may simply show again next visit */
-    }
+    } catch {}
     dialogRef.current?.close();
   }
 
   return (
     <dialog
       ref={dialogRef}
-      // Esc is blocked so the notice is closed only by the button.
       onCancel={(event) => event.preventDefault()}
       aria-labelledby="usage-notice-title"
       aria-describedby="usage-notice-body"
@@ -44,7 +41,7 @@ export function UsageNotice() {
       <div className="flex flex-col items-center text-center">
         <HeartHandshake className="h-10 w-10 text-orange" aria-hidden="true" />
         <h2 id="usage-notice-title" className="mt-4 text-xl font-semibold">
-          Free &amp; open-source
+          USER NOTICE
         </h2>
 
         <div
@@ -56,9 +53,9 @@ export function UsageNotice() {
             runs on free hosting and free services that have strict limits.
           </p>
           <p>
-            Please use it fairly: keep files to a sensible size, avoid bulk or
-            automated use, and don't misuse the tools. Heavy or abusive use can
-            slow the site down or take it offline for everyone.
+            If you find that the conversion is slow or not working, please wait
+            until the tools load. If this persists, please reload the website
+            and try again.
           </p>
           <p>Thank you for respecting it and helping keep it free.</p>
         </div>
