@@ -25,8 +25,4 @@ The API includes several basic protections:
 
 ## Dependencies
 
-Install Python dependencies with:
-
-```bash
-pip install -r requirements.txt
-```
+Modules used/required are specified in the requirements.txt
