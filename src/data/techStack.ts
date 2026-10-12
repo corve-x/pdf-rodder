@@ -39,7 +39,7 @@ export const techStack: TechCategory[] = [
     title: "Document processing",
     icon: FileText,
     items: [
-      { name: "LibreOffice", status: "current" },
+      { name: "LibreOffice", status: "planned" },
       { name: "pypdf", status: "current" },
       { name: "Pillow", status: "current" },
       { name: "Report Lab", status: "current" },
@@ -49,7 +49,6 @@ export const techStack: TechCategory[] = [
     title: "Deployment & infrastructure",
     icon: Database,
     items: [
-      { name: "Docker", status: "current" },
       { name: "Vercel", status: "current" },
       { name: "Render", status: "current" },
     ],
