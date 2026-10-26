@@ -12,7 +12,7 @@ export default function Merge() {
     <PageContainer size="narrow" className="space-y-6">
       <ToolHeader
         title="Merge into PDF"
-        tagline="Combine multiple files into one PDF."
+        tagline={"Combine multiple files into one PDF."}
       >
         <p className="max-w-xl leading-relaxed text-text-secondary">
           Upload multiple supported files — including documents, presentations,
@@ -22,16 +22,22 @@ export default function Merge() {
         <Badge tone="orange">Upload multiple files → One PDF</Badge>
       </ToolHeader>
       <MergeWorkspace />
-      <p className="text-sm text-text-muted">
-        Only have one file?{" "}
-        <Link
-          to="/convert"
-          className="text-text-secondary underline underline-offset-2 transition-colors duration-150 hover:text-text"
-        >
-          Convert into PDF
-        </Link>{" "}
-        is the simpler option.
-      </p>
+      <div className="space-y-2">
+        <p className="text-sm text-text-muted">
+          The backend is running on free services, so it might take a while for
+          it to load.
+        </p>
+        <p className="text-sm text-text-muted">
+          Only have one file?{" "}
+          <Link
+            to="/convert"
+            className="text-text-secondary underline underline-offset-2 transition-colors duration-150 hover:text-text"
+          >
+            Convert into PDF
+          </Link>{" "}
+          is the simpler option.
+        </p>
+      </div>
     </PageContainer>
   );
 }

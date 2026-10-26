@@ -12,21 +12,28 @@ export default function Convert() {
     <PageContainer size="narrow" className="space-y-6">
       <ToolHeader
         title="Convert into PDF"
-        tagline="Convert your files into PDF with no hassle."
+        tagline={"Convert your files into PDF with no hassle."}
       >
         <Badge tone="orange">Upload one file → One PDF</Badge>
       </ToolHeader>
       <ConvertWorkspace />
-      <p className="text-sm text-text-muted">
-        Have several files?{" "}
-        <Link
-          to="/merge"
-          className="text-text-secondary underline underline-offset-2 transition-colors duration-150 hover:text-text"
-        >
-          Merge into PDF
-        </Link>{" "}
-        combines them into one.
-      </p>
+      <div className="space-y-2">
+        <p className="text-sm text-text-muted">
+          The backend is running on free services, so it might take a while for
+          it to load.
+        </p>
+
+        <p className="text-sm text-text-muted">
+          Have several files?{" "}
+          <Link
+            to="/merge"
+            className="text-text-secondary underline underline-offset-2 transition-colors duration-150 hover:text-text"
+          >
+            Merge into PDF
+          </Link>{" "}
+          combines them into one.
+        </p>
+      </div>
     </PageContainer>
   );
 }

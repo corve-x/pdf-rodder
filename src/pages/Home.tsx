@@ -12,7 +12,9 @@ export default function Home() {
     <PageContainer className="space-y-10">
       <PageHeader
         title="PDF Tools"
-        description="Simple tools that helps you convert or combine PDFs"
+        description={
+          "Simple tools that helps you convert or combine PDFs.\nThe backend is running on free services, so it might take a while for it to load."
+        }
       />
       <ToolGrid tools={tools} />
       <ToolDifference />
