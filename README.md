@@ -1,4 +1,4 @@
-# PDF Rodder — Frontend
+# PDF Rodder
 
 A small web app to convert different file types into PDF/merge them into one.
 
